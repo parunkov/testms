@@ -42,12 +42,13 @@ body {
 /* Utils */
 .btn {
   display: inline-block;
-  padding: 18px 40px;
-  border-radius: 8px;
+  padding: 20px 60px;
+  border-radius: 20px;
   border: none;
   font-family: 'Inter', sans-serif;
-  font-weight: 700;
-  font-size: 16px;
+  font-weight: 400;
+  font-size: 24px;
+  line-height: 29px;
   cursor: pointer;
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   text-decoration: none;
@@ -164,7 +165,7 @@ body {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    gap: 100px;
+    gap: 128px;
 
     @media (max-width: 1200px) {
       gap: 50px;
@@ -202,18 +203,18 @@ body {
   }
 
   &__subtitle {
-    font-size: 22px;
+    font-size: 32px;
     color: #333;
-    font-weight: 500;
-    margin-bottom: 50px;
-    line-height: 1.35;
+    font-weight: 400;
+    margin-bottom: 40px;
+    line-height: 39px;
     display: flex;
     align-items: center;
     gap: 15px;
 
     .emoji {
-      height: 40px;
-      width: 40px;
+      height: 72px;
+      width: 72px;
     }
 
     @media (max-width: 992px) {
@@ -237,50 +238,63 @@ body {
   }
 
   &__tabs {
-    margin-top: 80px;
+    margin-top: 55px;
     display: flex;
-    justify-content: flex-start;
     gap: 12px;
-    overflow-x: auto;
-    padding-bottom: 20px;
+
+    @media (max-width: 1200px) {
+      overflow-x: auto;
+      padding-bottom: 20px;
+
+      &::-webkit-scrollbar {
+        display: none;
+      }
+    }
+  }
+
+  .btn {
+    width: 100%;
   }
 }
 
 /* Decor Star */
 .decor-star {
   position: absolute;
-  width: 40px;
-  height: 40px;
-  background: url("data:image/svg+xml,%3Csvg width='41' height='41' viewBox='0 0 41 41' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M20.5 0L24.847 16.153L41 20.5L24.847 24.847L20.5 41L16.153 24.847L0 20.5L16.153 16.153L20.5 0Z' fill='%23FF40FF'/%3E%3C/svg%3E") no-repeat center;
+  width: 60px;
+  height: 60px;
+  background: url("/images/star_1.png") no-repeat center;
   z-index: 3;
 
   &_1 {
-    top: -20px;
-    right: 0;
+    top: 100px;
+    right: 30px;
   }
 
   &_2 {
-    bottom: 10%;
+    bottom: 17%;
     left: -30px;
   }
 }
 
 .tab {
-  background: #F8F8F8;
-  padding: 12px 24px;
-  border-radius: 10px;
-  font-size: 13px;
+  flex: 1;
+  background: var(--white);
+  padding: 17px 14px;
+  border-radius: 40px 40px 0 0;
+  font-size: 20px;
   font-weight: 500;
-  white-space: nowrap;
+  line-height: 24px;
   color: #8E8E93;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   border: 1px solid transparent;
   transition: all 0.3s;
 
-  &:hover {
-    background: var(--white);
-    border-color: #EEE;
-    color: var(--text-main);
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+  @media (max-width: 1200px) {
+    min-width: 200px;
+    flex: 0 0 auto;
   }
 }
 
@@ -318,7 +332,7 @@ body {
 
 .adv-card {
   background: #F8F8F8;
-  border-radius: 32px;
+  border-radius: 40px;
   padding: 50px;
   display: flex;
   position: relative;
@@ -393,7 +407,7 @@ body {
 
 .price-card {
   background: #F8F8F8;
-  border-radius: 32px;
+  border-radius: 40px;
   padding: 60px 45px;
   display: flex;
   flex-direction: column;
