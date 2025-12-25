@@ -169,9 +169,6 @@ body {
 
     @media (max-width: 1200px) {
       gap: 50px;
-    }
-
-    @media (max-width: 992px) {
       flex-direction: column;
       text-align: center;
     }
@@ -223,9 +220,13 @@ body {
   }
 
   &__image {
-    flex: 0 0 851px;
+    flex: 0 1 851px;
     position: relative;
     padding-right: 60px;
+
+    @media (max-width: 1200px) {
+      flex: 1;
+    }
 
     &-wrapper {}
 
@@ -243,12 +244,8 @@ body {
     gap: 12px;
 
     @media (max-width: 1200px) {
-      overflow-x: auto;
       padding-bottom: 20px;
-
-      &::-webkit-scrollbar {
-        display: none;
-      }
+      flex-direction: column;
     }
   }
 
@@ -295,6 +292,7 @@ body {
   @media (max-width: 1200px) {
     min-width: 200px;
     flex: 0 0 auto;
+    border-radius: 40px;
   }
 }
 
