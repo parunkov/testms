@@ -10,6 +10,8 @@
   --white: #FFFFFF;
   --gray-light: #F2F2F2;
   --border-radius: 20px;
+  --dark-grey: #2D2D2D;
+  --gray-2: #C0C0C0;
 }
 
 * {
@@ -30,7 +32,7 @@ body {
 .container {
   max-width: 1920px;
   margin: 0 auto;
-  padding: 0 60px;
+  padding: 0 70px;
 
   @media (max-width: 1400px) {
     padding: 0 40px;
@@ -73,8 +75,13 @@ body {
 
 /* Header */
 .header {
-  background-color: #1A1A1A;
-  padding: 10px 0;
+  background: var(--gray-light);
+
+  &__block {
+    background-color: var(--dark-grey);
+    padding: 6px 0;
+    border-radius: 0 0 40px 40px;
+  }
 
   &__container {
     display: flex;
@@ -96,20 +103,20 @@ body {
   &__phone {
     color: var(--white);
     text-decoration: none;
-    font-size: 24px;
-    font-weight: 400;
-    line-height: 29px;
+    font-size: 32px;
+    line-height: 39px;
     transition: color 0.3s;
 
     &:hover {
-      color: var(--white);
+      color: var(--gray-2);
     }
   }
 }
 
 .logo {
   img {
-    height: 54px;
+    width: 251px;
+    height: 70px;
   }
 }
 
@@ -125,7 +132,7 @@ body {
     line-height: 29px;
 
     &:hover {
-      color: var(--white);
+      color: var(--gray-2);
     }
   }
 
@@ -140,15 +147,17 @@ body {
   justify-content: center;
   transition: transform 0.3s;
 
-  &:hover {
-    transform: translateY(-2px);
+  img {
+    width: 40px;
+    height: 40px;
   }
 }
 
 /* Hero */
 .hero {
-  padding: 100px 0 60px;
+  padding: 60px 0 0;
   position: relative;
+  background: var(--gray-light);
 
   &__container {
     display: flex;
@@ -171,14 +180,15 @@ body {
   }
 
   &__title {
-    font-size: 72px;
-    font-weight: 900;
-    line-height: 1.05;
+    font-size: 80px;
+    font-weight: 700;
+    line-height: 80px;
     margin-bottom: 35px;
-    letter-spacing: -2px;
+    color: var(--primary);
+
 
     span {
-      color: var(--primary);
+      color: var(--text-main);
     }
 
     @media (max-width: 1400px) {
@@ -211,18 +221,11 @@ body {
   }
 
   &__image {
-    flex: 1;
+    flex: 0 0 851px;
     position: relative;
+    padding-right: 60px;
 
-    &-wrapper {
-      position: relative;
-      z-index: 2;
-      clip-path: path('M100 0C44.7715 0 0 44.7715 0 100V400C0 455.228 44.7715 500 100 500H400C455.228 500 500 455.228 500 400V200C500 100 400 0 300 0H100Z');
-      border-radius: 60px 200px 60px 150px;
-      overflow: hidden;
-      background: #EEE;
-      aspect-ratio: 1/0.8;
-    }
+    &-wrapper {}
 
     img {
       width: 100%;
@@ -276,7 +279,7 @@ body {
     background: var(--white);
     border-color: #EEE;
     color: var(--text-main);
-    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
   }
 }
 
@@ -397,7 +400,7 @@ body {
 
   &:hover {
     background: #FFF;
-    box-shadow: 0 30px 60px rgba(0,0,0,0.08);
+    box-shadow: 0 30px 60px rgba(0, 0, 0, 0.08);
     transform: translateY(-15px);
   }
 
@@ -406,7 +409,7 @@ body {
     color: var(--white);
 
     .price-card__desc {
-      color: rgba(255,255,255,0.6);
+      color: rgba(255, 255, 255, 0.6);
     }
 
     .badge {
@@ -471,4 +474,3 @@ body {
   margin-bottom: 40px;
   width: fit-content;
 }
-
