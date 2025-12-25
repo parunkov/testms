@@ -3,763 +3,187 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Лидогенерация для бизнеса - Лидогенератор</title>
+    <title>LeadConveer - Лидогенерация для бизнеса</title>
+    <meta name="description" content="Лидогенерация для бизнеса. Покупайте только целевые лиды по фиксированной цене.">
+    <!-- Google Fonts: Inter -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: 'Montserrat', sans-serif;
-            background: #F5F5F5;
-            color: #000000;
-            overflow-x: hidden;
-        }
-
-        .container {
-            max-width: 1920px;
-            margin: 0 auto;
-            padding: 0 70px;
-        }
-
-        /* Header */
-        .header {
-            background: #2B2B2B;
-            padding: 12px 0;
-        }
-
-        .header-content {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-        }
-
-        .logo {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            text-decoration: none;
-        }
-
-        .logo-text {
-            font-family: 'Montserrat', sans-serif;
-            font-weight: 700;
-            font-size: 14px;
-            color: #FFFFFF;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-        }
-
-        .nav {
-            display: flex;
-            align-items: center;
-            gap: 32px;
-        }
-
-        .nav a {
-            font-family: 'Montserrat', sans-serif;
-            font-weight: 400;
-            font-size: 24px;
-            color: #FFFFFF;
-            text-decoration: none;
-            transition: color 0.3s ease;
-        }
-
-        .nav a:hover {
-            color: #FF6B00;
-        }
-
-        .header-contact {
-            display: flex;
-            align-items: center;
-            gap: 12px;
-        }
-
-        .whatsapp-icon {
-            width: 24px;
-            height: 24px;
-            background: #25D366;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: white;
-            font-size: 14px;
-        }
-
-        .phone {
-            font-family: 'Montserrat', sans-serif;
-            font-weight: 400;
-            font-size: 32px;
-            color: #FFFFFF;
-            text-decoration: none;
-        }
-
-        /* Hero Section */
-        .hero-section {
-            padding: 60px 0 40px;
-            background: #FFFFFF;
-        }
-
-        .hero-content {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 60px;
-            align-items: center;
-        }
-
-        .hero-text h1 {
-            font-family: 'Montserrat', sans-serif;
-            font-weight: 800;
-            font-size: 56px;
-            line-height: 1.1;
-            margin-bottom: 20px;
-        }
-
-        .hero-text h1 .orange {
-            color: #FF6B00;
-        }
-
-        .hero-description {
-            font-family: 'Montserrat', sans-serif;
-            font-weight: 400;
-            font-size: 16px;
-            line-height: 1.6;
-            color: #333333;
-            margin-bottom: 32px;
-            display: flex;
-            align-items: center;
-            gap: 12px;
-        }
-
-        .emoji {
-            font-size: 24px;
-        }
-
-        .hero-cta {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            background: #FF6B00;
-            color: #FFFFFF;
-            font-family: 'Montserrat', sans-serif;
-            font-weight: 700;
-            font-size: 14px;
-            text-transform: uppercase;
-            padding: 18px 48px;
-            border: none;
-            border-radius: 6px;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            text-decoration: none;
-            letter-spacing: 0.5px;
-        }
-
-        .hero-cta:hover {
-            background: #E55F00;
-            transform: translateY(-2px);
-            box-shadow: 0 8px 24px rgba(255, 107, 0, 0.3);
-        }
-
-        .hero-image {
-            position: relative;
-            border-radius: 16px;
-            overflow: hidden;
-        }
-
-        .hero-image img {
-            width: 100%;
-            height: auto;
-            display: block;
-        }
-
-        /* Features Bar */
-        .features-bar {
-            background: #FFFFFF;
-            padding: 30px 0 60px;
-        }
-
-        .features-list {
-            display: grid;
-            grid-template-columns: repeat(6, 1fr);
-            gap: 20px;
-        }
-
-        .feature-item {
-            text-align: center;
-        }
-
-        .feature-item p {
-            font-family: 'Montserrat', sans-serif;
-            font-weight: 500;
-            font-size: 12px;
-            line-height: 1.4;
-            color: #666666;
-        }
-
-        /* Sales Section */
-        .sales-section {
-            padding: 80px 0;
-            background: #F5F5F5;
-        }
-
-        .section-header {
-            text-align: center;
-            margin-bottom: 60px;
-        }
-
-        .section-title {
-            font-family: 'Montserrat', sans-serif;
-            font-weight: 800;
-            font-size: 44px;
-            line-height: 1.2;
-            color: #000000;
-            margin-bottom: 8px;
-        }
-
-        .section-title .orange {
-            color: #FF6B00;
-        }
-
-        .cards-grid {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 30px;
-        }
-
-        .card {
-            background: #FFFFFF;
-            border-radius: 16px;
-            padding: 40px;
-            position: relative;
-            transition: all 0.3s ease;
-        }
-
-        .card:hover {
-            transform: translateY(-4px);
-            box-shadow: 0 12px 40px rgba(0, 0, 0, 0.1);
-        }
-
-        .card-icon {
-            position: absolute;
-            top: 30px;
-            right: 30px;
-            font-size: 32px;
-        }
-
-        .card h3 {
-            font-family: 'Montserrat', sans-serif;
-            font-weight: 700;
-            font-size: 20px;
-            line-height: 1.3;
-            color: #000000;
-            margin-bottom: 16px;
-            max-width: 70%;
-        }
-
-        .card p {
-            font-family: 'Montserrat', sans-serif;
-            font-weight: 400;
-            font-size: 14px;
-            line-height: 1.6;
-            color: #666666;
-        }
-
-        .card-image {
-            margin-top: 20px;
-            border-radius: 12px;
-            overflow: hidden;
-        }
-
-        .card-image img {
-            width: 100%;
-            height: auto;
-            display: block;
-        }
-
-        /* Pricing Section */
-        .pricing-section {
-            padding: 80px 0 100px;
-            background: #FFFFFF;
-        }
-
-        .pricing-header {
-            text-align: center;
-            margin-bottom: 16px;
-        }
-
-        .pricing-title {
-            font-family: 'Montserrat', sans-serif;
-            font-weight: 800;
-            font-size: 44px;
-            line-height: 1.2;
-            color: #000000;
-            margin-bottom: 8px;
-        }
-
-        .pricing-title .orange {
-            color: #FF6B00;
-        }
-
-        .pricing-subtitle {
-            font-family: 'Montserrat', sans-serif;
-            font-weight: 400;
-            font-size: 14px;
-            line-height: 1.6;
-            color: #666666;
-            margin-bottom: 50px;
-        }
-
-        .pricing-cards {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 30px;
-            align-items: start;
-        }
-
-        .pricing-card {
-            background: #FFFFFF;
-            border-radius: 16px;
-            padding: 40px;
-            border: 1px solid #E0E0E0;
-            transition: all 0.3s ease;
-            display: flex;
-            flex-direction: column;
-        }
-
-        .pricing-card.featured {
-            background: #2B2B2B;
-            color: #FFFFFF;
-            border-color: #2B2B2B;
-            transform: scale(1.03);
-            box-shadow: 0 12px 40px rgba(0, 0, 0, 0.15);
-        }
-
-        .pricing-card:hover {
-            transform: translateY(-4px);
-            box-shadow: 0 12px 40px rgba(0, 0, 0, 0.12);
-        }
-
-        .pricing-card.featured:hover {
-            transform: scale(1.03) translateY(-4px);
-        }
-
-        .pricing-badge {
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-            background: #F5F5F5;
-            padding: 8px 16px;
-            border-radius: 6px;
-            margin-bottom: 24px;
-            width: fit-content;
-            font-family: 'Montserrat', sans-serif;
-            font-weight: 600;
-            font-size: 13px;
-            color: #000000;
-        }
-
-        .pricing-card.featured .pricing-badge {
-            background: #3A3A3A;
-            color: #FFFFFF;
-        }
-
-        .pricing-amount {
-            font-family: 'Montserrat', sans-serif;
-            font-weight: 800;
-            font-size: 36px;
-            line-height: 1.2;
-            color: #000000;
-            margin-bottom: 8px;
-        }
-
-        .pricing-card.featured .pricing-amount {
-            color: #FFFFFF;
-        }
-
-        .pricing-amount .orange {
-            color: #FF6B00;
-        }
-
-        .pricing-label {
-            font-family: 'Montserrat', sans-serif;
-            font-weight: 500;
-            font-size: 13px;
-            color: #666666;
-            margin-bottom: 32px;
-        }
-
-        .pricing-card.featured .pricing-label {
-            color: #AAAAAA;
-        }
-
-        .pricing-features {
-            list-style: none;
-            margin-bottom: 36px;
-            flex-grow: 1;
-        }
-
-        .pricing-features li {
-            font-family: 'Montserrat', sans-serif;
-            font-weight: 500;
-            font-size: 14px;
-            line-height: 1.7;
-            color: #333333;
-            padding-left: 28px;
-            position: relative;
-            margin-bottom: 14px;
-        }
-
-        .pricing-card.featured .pricing-features li {
-            color: #E8E8E8;
-        }
-
-        .pricing-features li:before {
-            content: "✓";
-            position: absolute;
-            left: 0;
-            color: #FF6B00;
-            font-weight: 700;
-            font-size: 18px;
-        }
-
-        .pricing-cta {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            background: #FF6B00;
-            color: #FFFFFF;
-            font-family: 'Montserrat', sans-serif;
-            font-weight: 700;
-            font-size: 14px;
-            text-transform: uppercase;
-            padding: 18px 32px;
-            border: none;
-            border-radius: 6px;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            text-decoration: none;
-            width: 100%;
-            letter-spacing: 0.5px;
-        }
-
-        .pricing-cta:hover {
-            background: #E55F00;
-            transform: translateY(-2px);
-        }
-
-        /* Mobile Menu */
-        .mobile-menu-btn {
-            display: none;
-            background: none;
-            border: none;
-            cursor: pointer;
-            padding: 8px;
-        }
-
-        .mobile-menu-btn span {
-            display: block;
-            width: 24px;
-            height: 2px;
-            background: #FFFFFF;
-            margin: 5px 0;
-            transition: 0.3s;
-        }
-
-        /* Responsive Design */
-        @media (max-width: 1440px) {
-            .container {
-                max-width: 1200px;
-            }
-
-            .hero-text h1 {
-                font-size: 48px;
-            }
-
-            .section-title,
-            .pricing-title {
-                font-size: 38px;
-            }
-        }
-
-        @media (max-width: 1024px) {
-            .nav {
-                display: none;
-            }
-
-            .mobile-menu-btn {
-                display: block;
-            }
-
-            .hero-content {
-                grid-template-columns: 1fr;
-            }
-
-            .features-list {
-                grid-template-columns: repeat(3, 1fr);
-            }
-
-            .cards-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .pricing-cards {
-                grid-template-columns: 1fr;
-            }
-
-            .pricing-card.featured {
-                transform: scale(1);
-            }
-        }
-
-        @media (max-width: 768px) {
-            .hero-text h1 {
-                font-size: 36px;
-            }
-
-            .section-title,
-            .pricing-title {
-                font-size: 28px;
-            }
-
-            .features-list {
-                grid-template-columns: repeat(2, 1fr);
-            }
-
-            .card,
-            .pricing-card {
-                padding: 28px;
-            }
-        }
-
-        @media (max-width: 480px) {
-            .hero-text h1 {
-                font-size: 28px;
-            }
-
-            .features-list {
-                grid-template-columns: 1fr;
-            }
-        }
-
-        /* Pixel Perfect for 1920px */
-        @media (min-width: 1920px) {
-            .container {
-                max-width: 1920px;
-            }
-        }
-    </style>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
 </head>
 <body>
-    <!-- Header -->
     <header class="header">
-        <div class="container">
-            <div class="header-content">
-                <a href="#" class="logo">
-                    <div class="logo-icon"><img src="./images/LOGO.png" alt=""></div>
-                </a>
-                <nav class="nav">
-                    <a href="#how">Как это работает</a>
-                    <a href="#pricing">Цены</a>
-                    <a href="#reviews">Отзывы</a>
-                    <a href="#contacts">Контакты</a>
-                </nav>
-                <div class="header-contact">
-                    <div class="whatsapp-icon">💬</div>
-                    <a href="tel:+74951183282" class="phone">+7 495 118-32-82</a>
+        <div class="container header__container">
+            <a href="/" class="logo">
+                <img src="/images/LOGO.png" alt="LeadConveer Logo">
+            </a>
+            <nav class="nav">
+                <a href="#how">Как это работает</a>
+                <a href="#price">Цена</a>
+                <a href="#reviews">Отзывы</a>
+                <a href="#contacts">Контакты</a>
+            </nav>
+            <div class="header__contacts">
+                <div class="header__socials">
+                    <a href="#" class="social-icon">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WA" width="24">
+                    </a>
+                    <a href="#" class="social-icon">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/8/82/Telegram_logo.svg" alt="TG" width="24">
+                    </a>
                 </div>
-                <button class="mobile-menu-btn">
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                </button>
+                <a href="tel:+74951183282" class="header__phone">+7 495 118-32-82</a>
             </div>
         </div>
     </header>
 
-    <!-- Hero Section -->
-    <section class="hero-section">
-        <div class="container">
-            <div class="hero-content">
-                <div class="hero-text">
-                    <h1>
-                        <span class="orange">Лидогенерация</span><br>
-                        для бизнеса
-                    </h1>
-                    <p class="hero-description">
-                        <span class="emoji">👍</span>
-                        <span>Покупайте только целевые лиды<br>по фиксированной цене от 300 ₽</span>
+    <main>
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="container hero__container">
+                <div class="hero__content">
+                    <h1 class="hero__title">Лидогенерация <br><span>для бизнеса</span></h1>
+                    <p class="hero__subtitle">
+                        Покупайте только целевые лиды <br>
+                        по фиксированной цене от 300 ₽ 
+                        <img src="/images/emoji.png" alt="emoji" class="emoji">
                     </p>
-                    <a href="#pricing" class="hero-cta">Выбрать пакет лидов</a>
+                    <button class="btn btn_primary">ВЫБРАТЬ ПАКЕТ ЛИДОВ</button>
                 </div>
-                <div class="hero-image">
-                    <img src="./images/work-from-home-blonde-young-woman-sitting-outside-working-laptop_259150-58659 1.png" alt="Бизнес леди с ноутбуком">
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Features Bar -->
-    <section class="features-bar">
-        <div class="container">
-            <div class="features-list">
-                <div class="feature-item">
-                    <p>Подтверждаем в СРМ</p>
-                </div>
-                <div class="feature-item">
-                    <p>Каждый лидов</p>
-                </div>
-                <div class="feature-item">
-                    <p>Скидка 20-70лидов</p>
-                </div>
-                <div class="feature-item">
-                    <p>Лиды для промышленности</p>
-                </div>
-                <div class="feature-item">
-                    <p>Гарантия для бизнеса</p>
-                </div>
-                <div class="feature-item">
-                    <p>Отчётность, полная прозрачность сделки</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Sales Section -->
-    <section class="sales-section">
-        <div class="container">
-            <div class="section-header">
-                <h2 class="section-title">
-                    Завалим ваш отдел продаж<br>
-                    <span class="orange">целевыми Лидами</span>
-                </h2>
-            </div>
-
-            <div class="cards-grid">
-                <!-- Card 1 -->
-                <div class="card">
-                    <span class="card-icon">✨</span>
-                    <h3>Оплата за результат</h3>
-                    <p>Платите только за подтверждённые лиды и получаете новых клиентов. Гарантируем возврат денег, если лид не подтвердился.</p>
-                    <div class="card-image">
-                        <img src="file:///C:/Users/Andrey/.gemini/antigravity/brain/50f0c296-0f24-4ac1-b767-60db6a49e7f9/phone_gradient_screen_1766633457826.png" alt="Телефон с градиентным экраном">
-                    </div>
-                </div>
-
-                <!-- Card 2 -->
-                <div class="card">
-                    <span class="card-icon">✨</span>
-                    <h3>Качественные лиды</h3>
-                    <p>Работаем с квалифицированными лидами, которые готовы к покупке. Каждый лид проходит проверку перед передачей вам.</p>
-                    <div class="card-image">
-                        <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=600&h=400&fit=crop" alt="Улыбающийся бизнесмен">
-                    </div>
-                </div>
-
-                <!-- Card 3 -->
-                <div class="card">
-                    <span class="card-icon">✨</span>
-                    <h3>Любой объём — на ваш выбор</h3>
-                    <p>Выбирайте удобный для вас объём лидов — от 10 до неограниченного количества в месяц — сколько требуется вам.</p>
-                    <div class="card-image">
-                        <img src="https://images.unsplash.com/photo-1607082348824-0a96f2a4b9da?w=600&h=400&fit=crop" alt="Корзина с процентами скидки">
-                    </div>
-                </div>
-
-                <!-- Card 4 -->
-                <div class="card">
-                    <span class="card-icon">✨</span>
-                    <h3>Комплекс технологий</h3>
-                    <p>После расчёта стоимости вы получаете уникальный набор для сбора лидов, который мы создаём специально для вас, что не остаётся вашим.</p>
-                    <div class="card-image">
-                        <img src="https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=600&h=400&fit=crop" alt="Ноутбук с кодом на экране">
+                <div class="hero__image">
+                    <div class="decor-star decor-star_1"></div>
+                    <div class="decor-star decor-star_2"></div>
+                    <div class="hero__image-wrapper">
+                        <img src="/images/hero_woman.png" alt="Woman with laptop">
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
-
-    <!-- Pricing Section -->
-    <section class="pricing-section" id="pricing">
-        <div class="container">
-            <div class="pricing-header">
-                <h2 class="pricing-title">
-                    Стоимость технологий<br>
-                    <span class="orange">«Лид Конвейер»</span>
-                </h2>
-                <p class="pricing-subtitle">
-                    Оптимальные тарифы и цены не получение готовых Лидов и заявок<br>
-                    с вашего сайта, без переплат и абонентских платежей
-                </p>
-            </div>
-
-            <div class="pricing-cards">
-                <!-- Старт -->
-                <div class="pricing-card">
-                    <div class="pricing-badge">
-                        <span>✨</span>
-                        <span>Старт</span>
-                    </div>
-                    <div class="pricing-amount">
-                        50 готовых лидов<br>
-                        за <span class="orange">22 500 ₽</span>
-                    </div>
-                    <p class="pricing-label">Отличный старт для тех, кто хочет купить Лиды и собрать сайта и протестировать продукт</p>
-                    <ul class="pricing-features">
-                        <li>450 ₽ за один Лид</li>
-                        <li>Получаем за 5-7 дней</li>
-                    </ul>
-                    <a href="#" class="pricing-cta">Купить</a>
-                </div>
-
-                <!-- Стандарт (Featured) -->
-                <div class="pricing-card featured">
-                    <div class="pricing-badge">
-                        <span>⚡</span>
-                        <span>Стандарт</span>
-                    </div>
-                    <div class="pricing-amount">
-                        100 готовых лидов<br>
-                        за <span class="orange">40 000 ₽</span>
-                    </div>
-                    <p class="pricing-label">Оптимальный вариант для тех, кто хочет получить лиды и заявки с сайта по выгодной цене</p>
-                    <ul class="pricing-features">
-                        <li>300 Лидов</li>
-                        <li>400 ₽ за один Лид</li>
-                        <li>Получаем за 7-14 дней</li>
-                        <li>Возможность точки Лидов</li>
-                        <li>Бесплатное продление Лидов</li>
-                    </ul>
-                    <a href="#" class="pricing-cta">Купить</a>
-                </div>
-
-                <!-- Премиум -->
-                <div class="pricing-card">
-                    <div class="pricing-badge">
-                        <span>⭐</span>
-                        <span>Премиум</span>
-                    </div>
-                    <div class="pricing-amount">
-                        300 готовых лидов<br>
-                        за <span class="orange">90 000 ₽</span>
-                    </div>
-                    <p class="pricing-label">Идеальный вариант для крупного бизнеса который хочет как можно больше Лидов</p>
-                    <ul class="pricing-features">
-                        <li>300 Лидов</li>
-                        <li>300 ₽ за один Лид</li>
-                        <li>Получаем за 14-30 дней</li>
-                        <li>Возможность точки Лидов</li>
-                        <li>Готовый и комиссионный кредит продаж целевых Лидов</li>
-                    </ul>
-                    <a href="#" class="pricing-cta">Купить</a>
+            
+            <div class="container">
+                <div class="hero__tabs">
+                    <div class="tab">Лидогенерация в b2b</div>
+                    <div class="tab">Биржа лидов</div>
+                    <div class="tab">Сервис по Лидгену</div>
+                    <div class="tab">Лиды для производства</div>
+                    <div class="tab">Клиенты для бизнеса</div>
+                    <div class="tab">Определить телефон посетителя сайта</div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
+
+        <!-- Advantages Section -->
+        <section class="advantages">
+            <div class="container">
+                <h2 class="section-title">Завалим ваш отдел продаж <br><span>целевыми Лидами</span></h2>
+                
+                <div class="advantages__grid">
+                    <div class="adv-card">
+                        <div class="adv-card__content">
+                            <h3>Оплата за результат</h3>
+                            <p>Вы платите только за переданные и полученные вами целевые Лиды — их контактные данные (телефон, Telegram, email)</p>
+                        </div>
+                        <div class="adv-card__image">
+                            <img src="/images/phone_card.png" alt="Phone">
+                        </div>
+                    </div>
+
+                    <div class="adv-card">
+                        <div class="adv-card__content">
+                            <h3>Качественные лиды</h3>
+                            <p>Все передаваемые вам Лиды — это потенциальные клиенты, которые искали ваш товар или услугу</p>
+                        </div>
+                        <div class="adv-card__image">
+                            <img src="/images/man_waving.png" alt="Man waving">
+                        </div>
+                    </div>
+
+                    <div class="adv-card">
+                        <div class="adv-card__content">
+                            <h3>Любой объём — <br>на ваш выбор</h3>
+                            <p>Покупайте столько контактов потенциальных клиентов в месяц — сколько требуется вам!</p>
+                        </div>
+                        <div class="adv-card__image">
+                            <img src="/images/cart_card.png" alt="Shopping cart">
+                        </div>
+                    </div>
+
+                    <div class="adv-card">
+                        <div class="adv-card__content">
+                            <h3>Комплекс технологий</h3>
+                            <p>После расчёта стоимости Лидов и оплаты выбранного пакета — вы получите уникальный код для своего сайта, который позволит отслеживать контакты тех, кто не оставил заявку</p>
+                        </div>
+                        <div class="adv-card__image">
+                            <img src="/images/laptop_card.png" alt="Laptop with code">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Pricing Section -->
+        <section class="pricing">
+            <div class="container">
+                <h2 class="section-title">Стоимость технологий <br><span>«Лид Конвейер»</span></h2>
+                <p class="section-subtitle">Оптимальные тарифы и цены на получение готовых Лидов и заявок <br>с вашего сайта, без переплаты и абонентской платы</p>
+                
+                <div class="pricing__grid">
+                    <!-- Start Card -->
+                    <div class="price-card">
+                        <div class="price-card__header">
+                            <span class="badge">Старт</span>
+                        </div>
+                        <div class="price-card__main">
+                            <div class="price-card__value">50 готовых лидов <br>за <span>22 500 ₽</span></div>
+                            <p class="price-card__desc">Стартовый пакет для тех, кто хочет купить Лидов со своего сайта и повысить свои продажи.</p>
+                            <ul class="price-card__features">
+                                <li>50 Лидов</li>
+                                <li>450 ₽ за один Лид</li>
+                                <li>Получение за 5–7 дней</li>
+                            </ul>
+                        </div>
+                        <button class="btn btn_orange">КУПИТЬ</button>
+                    </div>
+
+                    <!-- Standard Card -->
+                    <div class="price-card price-card_featured">
+                        <div class="price-card__header">
+                            <span class="badge">Стандарт</span>
+                        </div>
+                        <div class="price-card__main">
+                            <div class="price-card__value">100 готовых лидов <br>за <span>40 000 ₽</span></div>
+                            <p class="price-card__desc">Оптимальный пакет Лидов для любого отдела продаж и для повышения продаж своих товаров или услуг</p>
+                            <ul class="price-card__features">
+                                <li>100 Лидов</li>
+                                <li>400 ₽ за один Лид</li>
+                                <li>Получение за 7–14 дней</li>
+                                <li>Возможность показа Лидам рекламы через Яндекс.Директ</li>
+                            </ul>
+                        </div>
+                        <button class="btn btn_orange">КУПИТЬ</button>
+                    </div>
+
+                    <!-- Premium Card -->
+                    <div class="price-card">
+                        <div class="price-card__header">
+                            <span class="badge">Премиум</span>
+                        </div>
+                        <div class="price-card__main">
+                            <div class="price-card__value">300 готовых лидов <br>за <span>90 000 ₽</span></div>
+                            <p class="price-card__desc">Максимум целевых Лидов в ближайшее время для вашего бизнеса которые уже завтра могут стать Вашими клиентами!</p>
+                            <ul class="price-card__features">
+                                <li>300 Лидов</li>
+                                <li>300 ₽ за один Лид</li>
+                                <li>Получение за 14–30 дней</li>
+                                <li>Возможность показа Лидам рекламы через Яндекс.Директ</li>
+                                <li>Готовый и конверсионный скрипт продаж целевым Лидам</li>
+                            </ul>
+                        </div>
+                        <button class="btn btn_orange">КУПИТЬ</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script type="module" src="/src/js/main.js"></script>
 </body>
 </html>
